@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 내 ASP.NET 애플리케이션</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@4/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Content/cropper.min.css">
+    <link href="~/Content/main.css" rel="stylesheet" />
+</head>
+<body>
+    @RenderBody()
+
+    <script src="https://unpkg.com/jquery@3/dist/jquery.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap@4/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <script src="~/Scripts/cropper.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

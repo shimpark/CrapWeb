@@ -1,0 +1,202 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>2021 SK 신입사원 과정</title>
+    <meta name="title" content="2021 SK 신입사원 과정" />
+    <meta name="keywords" content="2021 SK 신입사원" />
+    <meta name="description" content="2021 SK 신입사원 교육" />
+    <meta property="og:image" content="/content/images/og_image.png" />
+    <script type="text/javascript" src="/content/scripts/jquery-1.12.2.min.js"></script>
+
+    <script type="text/javascript" src="/content/scripts/cropper.min.js"></script>
+    <script type="text/javascript" src="/content/scripts/jquery-cropper.min.js"></script>
+    <script type="text/javascript" src="/content/scripts/common.js"></script>
+    <script type="text/javascript" src="/content/scripts/util.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/content/styles/cropper.min.css">
+    <link rel="stylesheet" type="text/css" href="/content/styles/font.css">
+    <link rel="stylesheet" type="text/css" href="/content/styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="/content/styles/layout.css?v=2021010619">
+    <link rel="stylesheet" type="text/css" href="/content/styles/style.css?v=20210106192">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+</head>
+<script type="text/javascript">
+    $.ajaxSetup({ cache: false });
+    document.documentElement.addEventListener('touchstart', function (event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    }, false);
+
+    var lastTouchEnd = 0;
+
+    document.documentElement.addEventListener('touchend', function (event) {
+        var now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+</script>
+<body>
+
+    <div class="dummy"></div>
+
+    <div id="dim"></div>
+    <div id="main">
+
+        <div class="profile-container">
+            <div class="grid">
+                <div class="profile-form">
+                    <div class="form-wrapper">
+                        <div class="form-header">
+                            <span>개인정보</span>
+                        </div>
+                        <div class="my-info">
+                            <a href="javascript:void(0);" class="btn-show-profile-modal">프로필 수정</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-container">
+            <div class="profile-modal">
+                <div class="photo-area">
+                    <label>
+                        사진<strong>*</strong>
+                    </label>
+                    <div class="thumbnail" style="background-image:url('https://sk-new-conference-dev.s3.ap-northeast-2.amazonaws.com/profile/mentee2b%40sk.com.png?v=20210107015955')"></div>
+                    <div>
+                        <form id="profileImageForm" enctype="multipart/form-data">
+                            <input type="file" id="profileImageFile" />
+                        </form>
+                        <span>본인 얼굴이 나오도록 프로필 사진을 등록해 주세요.</span>
+                        <a href="javascript:void(0)" class="btn-add-photo flex">파일등록</a>
+                        <strong>※ 비율은 1:1로 600*600 권장</strong>
+                    </div>
+                </div>
+                <div class="cropper-area">
+                    <div class="cropper-wrapper">
+                        <img id="cropperImage" />
+                    </div>
+                    <div class="button-wrapper">
+                        <a href="javascript:void(0);" data-function-type="zoomIn"><i class="fa fa-search-plus"></i></a>
+                        <a href="javascript:void(0);" data-function-type="zoomOut"><i class="fa fa-search-minus"></i></a>
+                        <a href="javascript:void(0);" data-function-type="left"><i class="fa fa-arrow-left"></i></a>
+                        <a href="javascript:void(0);" data-function-type="right"><i class="fa fa-arrow-right"></i></a>
+                        <a href="javascript:void(0);" data-function-type="up"><i class="fa fa-arrow-up"></i></a>
+                        <a href="javascript:void(0);" data-function-type="down"><i class="fa fa-arrow-down"></i></a>
+                        <a href="javascript:void(0);" data-function-type="rotateLeft"><i class="fa fa-undo-alt"></i></a>
+                        <a href="javascript:void(0);" data-function-type="rotateRight"><i class="fa fa-redo-alt"></i></a>
+                        <a href="javascript:void(0);" data-function-type="refresh"><i class="fa fa-sync-alt"></i></a>
+                        <a href="javascript:void(0);" data-function-type="save"><i class="fa fa-save"></i></a>
+                    </div>
+                </div>
+
+                <div class="button-area">
+                    <a href="javascript:void(0);" class="common-btn btn-submit-profile">
+                        확인
+                        <img src="/content/images/icon/icon_arrow_white_long.png">
+                    </a>
+                    <a href="javascript:void(0);" class="common-btn btn-close-profile">
+                        닫기
+                        <img src="/content/images/icon/icon_arrow_black_long.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="/content/scripts/cropper-profile.js"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+
+            });
+
+            $('.btn-show-profile-modal').click(function () {
+                $('.profile-modal').customModal('show', 'flex');
+            });
+
+            $('.btn-close-profile').click(function () {
+                $('.profile-modal').customModal('hide');
+            });
+
+            $('.btn-submit-profile').click(function () {
+                var phone = $('#phone').val();
+                var zip = $('#zip').val();
+                var address1 = $('#address1').val();
+                var address2 = $('#address2').val();
+
+                if (Util.isEmptyStr(phone)) {
+                    alert('휴대폰 번호를 입력해 주세요.');
+                    return false;
+                }
+
+                if (Util.isEmptyStr(zip) || Util.isEmptyStr(address1) || Util.isEmptyStr(address2)) {
+                    alert('주소를 입력해 주세요.');
+                    return false;
+                }
+
+                var orgPw = $('#orgPw').val();
+                var newPw = $('#newPw').val();
+                var checkPw = $('#checkPw').val();
+
+                if (!Util.isEmptyStr(orgPw) || !Util.isEmptyStr(newPw) || !Util.isEmptyStr(checkPw)) {
+                    if (Util.isEmptyStr(orgPw)) {
+                        alert('현재 비밀번호를 입력해 주세요.');
+                        return false;
+                    }
+
+                    if (Util.isEmptyStr(newPw)) {
+                        alert('수정할 비밀번호를 입력해 주세요.');
+                        return false;
+                    }
+
+                    if (Util.isEmptyStr(checkPw)) {
+                        alert('비밀번호 확인을 입력해 주세요.');
+                        return false;
+                    }
+
+                    if (newPw !== checkPw) {
+                        alert('비밀번호 확인이 일치하지 않습니다.');
+                        return false;
+                    }
+
+                    if (!Util.validatePw(newPw)) {
+                        return false;
+                    }
+                }
+
+                $.ajax({
+                    url: '/rest/mypage/modify-profile',
+                    data: JSON.stringify({
+                        phone: phone,
+                        zip: zip,
+                        address1: address1,
+                        address2: address2,
+                        orgPw: orgPw,
+                        newPw: newPw,
+                        checkPw: checkPw
+                    }),
+                    dataType: 'json',
+                    type: 'post',
+                    contentType: 'application/json',
+                    success: function (response) {
+                        if (response.object) {
+                            location.reload();
+                        }
+                    }
+                })
+            });
+        </script>
+    </div>
+</body>
+</html>

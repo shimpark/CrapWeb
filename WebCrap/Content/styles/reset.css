@@ -1,0 +1,250 @@
+@charset "UTF-8";
+/*
+ * CSS Base v0.1.3 [License-Free, Stability NOT Guaranteed]
+ * - Resets Browser Default CSS
+ * - Normalizes Form Element Default Style
+ * - Sets Device-Depended Safe Fonts
+ * - Supports Modern Browsers and IE8+
+ ******************************************************************************
+ * REFERENCES:
+ * Eric Meyer (v2.0; 20110126; No License)
+ * - http://meyerweb.com/eric/tools/css/reset/
+ * normalize.css (v4.1.1; MIT License)
+ * - http://github.com/necolas/normalize.css
+ */
+/* elements general */
+a, abbr, address, applet, article, aside, audio, big, blockquote, body,
+button, canvas, caption, center, cite, code, dd, del, details, dfn, dialog,
+div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3,
+h4, h5, h6, header, hr, html, i, iframe, img, input, ins, kbd, label, legend,
+li, main, mark, menu, nav, object, ol, optgroup, output, p, pre, progress, q,
+ruby, s, samp, section, select, small, span, strike, strong, sub, summary, sup,
+svg, table, tbody, td, textarea, tfoot, th, thead, time, tr, tt,  ul, var,
+video{
+    vertical-align:baseline;
+    box-sizing:content-box;
+    padding:0;
+    border:0;
+    margin:0;
+    overflow:visible;
+    background:transparent;
+    line-height:1.4;
+    font-family:'Noto Sans KR', 'Segoe UI', AppleSDGothicNeo, 'Apple SD Gothic Neo', 'Apple SD 고딕 Neo', 'Microsoft NeoGothic', 'Droid sans', Verdana, Arial, sans-serif;
+    text-decoration:none;
+    text-shadow:none;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+*:before,
+*:after{
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+/* additional display */
+article, aside, details, dialog, figcaption, figure, footer, header, main,
+menu, nav, section, summary, svg{
+    display:block;
+}
+audio, canvas, progress, video{
+    display:inline-block;
+}
+[hidden], template{
+    display:none;
+}
+/* decoration */
+html{
+    -ms-text-size-adjust:none;
+    -webkit-text-size-adjust:none;
+}
+html, body{
+    width:100%;
+    font-size:14px;
+    font-weight:400;
+    color:#000000;
+    word-break:keep-all;
+}
+div{
+    -webkit-overflow-scrolling:touch;
+}
+abbr[title]{
+    border-bottom:none;
+}
+audio:not([controls]){
+    display:none;
+    height:0;
+}
+strong{
+    font-weight:inherit;
+    color:inherit;
+    font-family:inherit;
+    font-size:inherit;
+}
+blockquote, q{
+    quotes:none;
+}
+blockquote:before, blockquote:after, q:before, b:after{
+    content:none;
+}
+code, kbd, pre, samp{
+    font-family:Consolas, "Lucida Console", monospace, "Courier New";
+}
+hr{
+    height:0;
+}
+img{
+    border-style:none;
+    max-width:100%;
+    vertical-align:top;
+}
+ol, ul{
+    list-style:none;
+}
+svg:not(:root){
+    overflow:hidden;
+}
+table{
+    border-spacing:0;
+}
+table, th, td{
+    border-collapse:collapse;
+}
+/* user interface */
+a, button, input, option, select, textarea,
+[type=checkbox] + label, [type=radio] + label{
+    color:#000000;
+    box-sizing:border-box;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+}
+textarea, [type=email], [type=number], [type=password], [type=search],
+[type=tel], [type=text], [type=url]{
+    cursor:text;
+}
+optgroup, [type=date], [type=datetime], [type="datetime-local"],
+[type=month], [type=range], [type=time], [type=week]{
+    cursor:default;
+}
+button:disabled, input:disabled, option:disabled, select:disabled,
+textarea:disabled{
+    cursor:not-allowed !important;
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+a{
+    box-sizing:border-box;
+    -webkit-text-decoration-skip:objects;
+}
+button{
+    border:none;
+    cursor:pointer;
+}
+*:focus{
+    outline:none !important;
+}
+button > *{
+    position:relative;
+}
+select, textarea{
+    border:1px solid #DDDDDD;
+    border-radius:0.5em;
+}
+button, select{
+    text-transform:none;
+}
+button, [type=button], html [type=button], [type=reset], [type=submit]{
+    -webkit-appearance:button;
+    -moz-appearance:button;
+    appearance:button;
+}
+[type=number], [type=search]{
+    -webkit-appearance:textfield;
+    -moz-appearance:textfield;
+    appearance:textfield;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+[type=search]{
+    outline-offset:-2px;
+}
+optgroup{
+    font-weight:bold;
+}
+select, textarea{
+    overflow:auto;
+}
+textarea{
+    resize:none;
+}
+[type=checkbox], [type=radio]{
+    width:13px;
+    height:13px;
+}
+button::-moz-focus-inner, input::-moz-focus-inner{
+    padding:0;
+    /*border: 0;*/
+}
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button{
+    height:auto;
+}
+[type=search]::-webkit-search-cancel-button,
+[type=search]::-webkit-search-decoration{
+    -webkit-appearance:none;
+}
+input::-ms-clear{
+    display:none;
+}
+input::-ms-reveal{
+    display:none;
+}
+p, span, a, button{
+}
+::-webkit-input-placeholder{
+    color:#999999;
+    font:inherit;
+}
+::-moz-placeholder{
+    color:#999999;
+    font:inherit;
+}
+:-ms-input-placeholder{
+    color:#999999 !important;
+    font:inherit;
+}
+:-moz-placeholder{
+    color:#999999;
+    font:inherit;
+}
+::-webkit-file-upload-button{
+    -webkit-appearance:button;
+    -moz-appearance:button;
+    appearance:button;
+    font:inherit;
+}
+button, input, select, textarea{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+}
+select::-ms-expand{
+    display:none;
+}
+::-moz-selection{
+    background:rgba(0, 0, 0, 0.99);
+    color:#FFFFFF;
+}
+::selection{
+    background:rgba(0, 0, 0, 0.99);
+    color:#FFFFFF;
+}
+img::selection{
+    background:none
+}

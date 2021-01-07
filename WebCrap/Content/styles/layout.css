@@ -1,0 +1,51 @@
+.flex{display:flex;flex-direction:row;justify-content:flex-start;align-items:center;align-content:center}
+.grid{width:1170px;margin:auto}
+.sub-grid{width:1030px;margin:auto}
+h1, h2, h3, h4, h5, h6, span, strong, a{font-weight:inherit;color:inherit;font-size:inherit;font-family:inherit;line-height:inherit}
+.text-break-pc{display:block}
+
+html, body{
+    font-size:14px;
+}
+
+@media (max-width: 1199.98px) {
+    .text-break-pc{display:inline}
+    .grid{width:90vw;margin:0 5vw}
+    .sub-grid{width:95%;margin:auto}
+    html, body{
+        font-size:12px;
+    }
+}
+@media (max-width: 991.98px) { /* Medium devices (tablets, less than 992px) */
+}
+@media (max-width: 767.98px) { /* Small devices (landscape phones, less than 768px) */
+    html, body{
+        font-size:10px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .text-break-pc{display:inline}
+    .text-break-mo{display:block}
+}
+
+.fw100{font-weight:100}
+.fw300{font-weight:300}
+.fw400{font-weight:400}
+.fw500{font-weight:500}
+.fw700{font-weight:700}
+.fw900{font-weight:900}
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder{ /* WebKit browsers */ color:transparent; }
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */ color:transparent; }
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder{ /* Mozilla Firefox 19+ */ color:transparent; }
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder{ /* Internet Explorer 10+ */ color:transparent; }
+
+
+@media (max-width: 1199.98px) {
+}
+@media (max-width: 991.98px) {
+}
+@media (max-width: 767.98px) {
+}
+@media (max-width: 575.98px) {
+}
